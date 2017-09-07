@@ -1,14 +1,14 @@
-# Hugo Bootstrap v4 Blog
-A simple [Hugo](https://gohugo.io) theme based on the [Bootstrap v4 blog example](http://v4-alpha.getbootstrap.com/examples/blog).
+# Hugo Bootstrap v4 Blog [![Build Status](https://travis-ci.org/alanorth/hugo-theme-bootstrap4-blog.svg?branch=master)](https://travis-ci.org/alanorth/hugo-theme-bootstrap4-blog)
+A simple [Hugo](https://gohugo.io) theme based on the [Bootstrap v4 blog example](https://getbootstrap.com/docs/4.0/examples/blog). Opinionated and geared towards blog-style content.
 
-![Screenshot](https://raw.githubusercontent.com/alanorth/hugo-theme-bootstrap4-blog/master/screenshot@2x.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/alanorth/hugo-theme-bootstrap4-blog/master/screenshot.png "Screenshot")
 
 See [picturingjordan.com](https://picturingjordan.com) for an example of this theme in use.
 
 ## Features
 
 - Responsive design
-- Uses Bootstrap v4's [native system fonts](http://v4-alpha.getbootstrap.com/content/reboot/#native-font-stack) to load quickly and look good on all platforms
+- Uses Bootstrap v4's [native system font stack](https://getbootstrap.com/docs/4.0/content/reboot/#native-font-stack) to load quickly and look good on all platforms
 - Basic [OpenGraph](http://ogp.me) and [Twitter Card](https://dev.twitter.com/cards/types) metadata support
 - robots.txt linking to XML sitemap (disabled by default, see [Hugo docs](https://gohugo.io/extras/robots-txt/))
 - Basic support for [multi-lingual content](https://github.com/spf13/hugo/blob/master/docs/content/content/multilingual.md) (added in Hugo 0.17)
@@ -17,9 +17,10 @@ See [picturingjordan.com](https://picturingjordan.com) for an example of this th
 - Supports Disqus comments, see [Hugo docs](https://gohugo.io/extras/comments/)
 - Can show a message about cookie usage to the user, see [`exampleSite/config.toml`](https://github.com/alanorth/hugo-theme-bootstrap4-blog/blob/master/exampleSite/config.toml)
 - Allow addition of custom `<head>` code in site's `layouts/partial/head-custom.html` (see [#17](https://github.com/alanorth/hugo-theme-bootstrap4-blog/pull/17))
+- Configurable display of summaries of content in list templates.
 
 ## Usage
-Clone the repository to your site's `themes` directory. Refer to [`exampleSite/config.toml`](https://github.com/alanorth/hugo-theme-bootstrap4-blog/blob/master/exampleSite/config.toml) for optional configuration values.
+Clone the repository to your site's `themes` directory. Refer to [`exampleSite/config.toml`](https://github.com/alanorth/hugo-theme-bootstrap4-blog/blob/master/exampleSite/config.toml) for recommended configuration values.
 
 ## Content Suggestions
 A few suggestions to help you get a good looking site quickly:
@@ -30,13 +31,15 @@ A few suggestions to help you get a good looking site quickly:
 - If you want an image to be shown when you share a post on social media, specify at least one image in the post's front matter, for example: `images: ["/2016/10/screenshot.png"]`
 - Use the `<!--more-->` tag in posts to control how much of a post is shown on summary pages
 - Disable comments on a post by setting `comments = false` in its frontmatter
+- Disable social sharing icons site wide (or on individual pages/posts) by setting `sharingicons = false`
+- If your content is stored in git, add `enableGitInfo = true` to your site config and Hugo will use git history to set a more accurate modification date in page metadata
 
 See the source code and structure of [picturingjordan.com](https://github.com/alanorth/picturingjordan.com) to get more ideas.
 
 ## Building (For Developers)
-This theme uses the [Bootstrap](https://getbootstrap.com/) framework. A static version of this is already included, but if you want to bump the version, tweak the style, etc, you'll need to rebuild the assets. Make sure you have NodeJS v4 or v6 installed, and then run the following from inside the theme's directory:
+This theme uses the [Bootstrap](https://getbootstrap.com/) framework. A static version of this is already included, but if you want to bump the version, tweak the style, etc, you'll need to rebuild the assets. Make sure you have NodeJS v6 or v7 installed, and then run the following from inside the theme's directory:
 
-```
+```console
 $ npm install
 $ npm run build
 ```
